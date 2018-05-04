@@ -4,6 +4,9 @@ using System.Text;
 
 namespace NetCoreSauceLabsAutomation.Utils
 {
+    /// <summary>
+    /// SauceLabs Supported Browsers
+    /// </summary>
     public static class Browsers
     {
         public const string Chrome = "Chrome";

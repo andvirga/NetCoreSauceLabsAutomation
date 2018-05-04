@@ -1,23 +1,31 @@
 ﻿using NetCoreSauceLabsAutomation.SeleniumObjects.Pages;
 using NetCoreSauceLabsAutomation.Utils;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NetCoreSauceLabsAutomation.AutomationTests
 {
+    /// <summary>
+    /// Google Test Fixture
+    /// </summary>
     [TestFixture]
     public class GoogleTests : TestBase
     {
-        #region TestElements
+        #region Test Elements
 
+        /// <summary>
+        /// Google page
+        /// </summary>
         private GooglePage page = new GooglePage();
 
         #endregion
 
         #region Tests
 
+        /// <summary>
+        /// Sample test of a simple search on Google
+        /// </summary>
+        /// <param name="os">OS to run the test</param>
+        /// <param name="browser">Browser to run the test</param>
         [Test]
         [TestCase(OperatingSystems.Windows, Browsers.Chrome)]
         [TestCase(OperatingSystems.Windows, Browsers.Edge)]
@@ -34,6 +42,9 @@ namespace NetCoreSauceLabsAutomation.AutomationTests
 
         #region Tests Definitions
 
+        /// <summary>
+        /// Test definitions of the SampleTest
+        /// </summary>
         private void SampleTestDefinitions()
         {
             page.MakeSimpleSearch();

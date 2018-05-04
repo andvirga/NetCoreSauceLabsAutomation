@@ -1,14 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using OpenQA.Selenium;
 
 namespace NetCoreSauceLabsAutomation.SeleniumObjects.Pages
 {
+    /// <summary>
+    /// Selenium Page Base Object
+    /// </summary>
     public abstract class BasePage
     {
         /// <summary>
-        /// Current Page Base Url
+        /// Current Page Url
         /// </summary>
         protected abstract Uri BaseUrl { get; }
 
@@ -16,6 +17,14 @@ namespace NetCoreSauceLabsAutomation.SeleniumObjects.Pages
         /// WebDriver used in Current page
         /// </summary>
         protected IWebDriver WebDriver { get; set;  }
+
+        /// <summary>
+        /// Goes to the default page Url
+        /// </summary>
+        public void GoTo()
+        {
+            this.WebDriver.Navigate().GoToUrl(BaseUrl);
+        }
 
         /// <summary>
         /// Goes to a specific Url
@@ -27,11 +36,6 @@ namespace NetCoreSauceLabsAutomation.SeleniumObjects.Pages
             {
                 this.WebDriver.Navigate().GoToUrl(Url);
             }
-        }
-
-        public void GoTo()
-        {
-            this.WebDriver.Navigate().GoToUrl(BaseUrl);
         }
 
         /// <summary>

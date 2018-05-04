@@ -4,6 +4,9 @@ using System.Text;
 
 namespace NetCoreSauceLabsAutomation.Utils
 {
+    /// <summary>
+    /// SauceLabs Supported OS
+    /// </summary>
     public static class OperatingSystems
     {
         public const string Windows = "Windows 10";

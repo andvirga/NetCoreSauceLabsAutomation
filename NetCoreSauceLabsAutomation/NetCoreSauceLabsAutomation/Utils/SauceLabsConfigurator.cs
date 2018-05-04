@@ -9,10 +9,19 @@ using System.IO;
 
 namespace NetCoreSauceLabsAutomation.Utils
 {
+    /// <summary>
+    /// Establishes and Sets the configuration of the remote webdriver to use SauceLabs
+    /// </summary>
     public static class SauceLabsConfigurator
     {
         private static IConfiguration Configuration { get; set; }
 
+        /// <summary>
+        /// Obtains a RemoteWebDriver to use in SauceLabs with a specific OS and browser.
+        /// </summary>
+        /// <param name="os">Operating System to use in SauceLabs</param>
+        /// <param name="browser">Browser to use in SauceLabs</param>
+        /// <returns>RemoteWebDriver</returns>
         internal static IWebDriver GetSauceLabsWebDriver(string os, string browser)
         {
             var sauceLabsUrl = new Uri("https://ondemand.saucelabs.com:443/wd/hub");
