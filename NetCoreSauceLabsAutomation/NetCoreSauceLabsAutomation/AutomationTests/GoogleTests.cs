@@ -1,4 +1,5 @@
 ﻿using NetCoreSauceLabsAutomation.SeleniumObjects.Pages;
+using NetCoreSauceLabsAutomation.Utils;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,14 @@ namespace NetCoreSauceLabsAutomation.AutomationTests
         #region Tests
 
         [Test]
-        public void SampleTest()
+        [TestCase(OperatingSystems.Windows, Browsers.Chrome)]
+        [TestCase(OperatingSystems.Windows, Browsers.Edge)]
+        [TestCase(OperatingSystems.Windows, Browsers.IE)]
+        [TestCase(OperatingSystems.MacOS, Browsers.Safari)]
+        [TestCase(OperatingSystems.Linux, Browsers.Firefox)]
+        public void SampleTest(string os, string browser)
         {
-            InitializeTest(page);
+            InitializeTest(page, browser, os, true);
             ExecuteTest(SampleTestDefinitions);
         }
 
